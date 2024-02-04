@@ -5,19 +5,22 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class EtudiantA {
+public class ModuleB {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String nom,prenom;
+    private String titre;
 
-    @OneToOne(mappedBy = "etudiant", cascade = CascadeType.ALL)
-    private ModuleA module;
 
+
+    @ManyToOne
+    @JoinColumn(name = "etudiant_id")
+    private EtudiantB etudiant;
 }

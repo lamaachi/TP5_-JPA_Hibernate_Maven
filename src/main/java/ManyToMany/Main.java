@@ -45,7 +45,6 @@ public class Main {
         module.setEtudiants(etudiants);
 
 
-
         // Persist entities
         entityManager.persist(module);
         entityManager.persist(module1);
